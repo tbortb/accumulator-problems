@@ -30,6 +30,8 @@ For example, the tests require that to complete this challenge, your function mu
 results on the index page in the browser.
 */
 
+let sum = arr => arr.reduce((acc, value) => value + acc, 0);
+
 
 
 
@@ -48,7 +50,7 @@ Write function named doubleLetters that will take a string and double every lett
 Example: if you pass it "abc" then it should return "aabbcc"
 */
 
-
+let doubleLetters = arr => arr.split("").map(value => value + value).reduce((acc, value) => acc + value, "");
 
 
 
@@ -67,6 +69,7 @@ Write function named doubleNumbers that will take an array of numbers and return
 Example: if you pass it [1,2,3] then it should return [2,4,6]
 */
 
+let doubleNumbers = arr => arr.map(val => val * 2);
 
 
 
@@ -89,13 +92,7 @@ Examples:
 - if you call multiplyNumbers([1,2,3], 5) you'd get [5,10,15]
 */
 
-
-
-
-
-
-
-
+let multiplyNumbers = (arr, mul) => arr.map(val => val * mul);
 
 
 /*
@@ -111,7 +108,14 @@ NOTE: you can assume each input will be the same length
 */
 
 
-
+let interleave = function(arr1, arr2){
+    let final = [];
+    arr1.forEach((value, index) => {
+        final.push(value);
+        final.push(arr2[index]);
+    });
+    return final;
+} 
 
 
 
@@ -129,6 +133,14 @@ Write function named createRange that will take a number and a default value and
 
 Example: if you pass it 4 and "Hello" then it should return ["Hello", "Hello", "Hello", "Hello"]
 */
+
+let createRange = (number, value) => {
+    let result = [];
+    for(let i = 0; i < number; i++){
+        result.push(value);
+    }
+    return result;
+}
 
 
 
